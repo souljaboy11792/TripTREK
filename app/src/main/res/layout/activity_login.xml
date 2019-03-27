@@ -27,8 +27,9 @@
             android:layout_marginRight="8dp"
             android:ems="10"
             android:hint="Email"
+            android:gravity="center"
             android:inputType="textEmailAddress"
-            android:background="#94FFFFFF"/>
+            android:background="@drawable/rounded_textfield"/>
 
         <EditText
             android:id="@+id/password"
@@ -39,8 +40,9 @@
             android:layout_marginRight="8dp"
             android:ems="10"
             android:hint="Password"
+            android:gravity="center"
             android:inputType="textPassword"
-            android:background="#94FFFFFF" />
+            android:background="@drawable/rounded_textfield" />
 
         <Button
             android:id="@+id/SignInButton"
