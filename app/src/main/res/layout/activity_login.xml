@@ -51,7 +51,9 @@
             android:layout_marginTop="32dp"
             android:text="Sign In"
             android:background="#B7FF0000"
-            android:textColor="#FFFF"/>
+            android:textColor="#FFFF"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground" />
 
         <Button
             android:id="@+id/SignUpButton"
@@ -60,7 +62,9 @@
             android:layout_marginTop="10dp"
             android:text="Sign Up"
             android:background="#D7077F9E"
-            android:textColor="#FFFF"/>
+            android:textColor="#FFFF"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"/>
 
         <Button
             android:id="@+id/FacebookSignInButton"
@@ -69,7 +73,9 @@
             android:layout_marginTop="10dp"
             android:text="Log In With Facebook"
             android:background="#8A0055FF"
-            android:textColor="#FFFF"/>
+            android:textColor="#FFFF"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"/>
 
         <Button
             android:id="@+id/TwitterSignInButton"
@@ -78,7 +84,9 @@
             android:layout_marginTop="10dp"
             android:text="Log In With Twitter"
             android:background="#B500F9FF"
-            android:textColor="#FFFF"/>
+            android:textColor="#FFFF"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"/>
 
         <Button
             android:id="@+id/GmailSignInButton"
@@ -87,7 +95,9 @@
             android:layout_marginTop="10dp"
             android:text="Log In With Google"
             android:background="#B0FF0000"
-            android:textColor="#FFFF"/>
+            android:textColor="#FFFF"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"/>
     </LinearLayout>
 
 </RelativeLayout>
