@@ -10,6 +10,14 @@ class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        SignInButton.setOnClickListener {
+            val email = email.text
+            val username = username.text
+            val password = password.text
+
+            d("TT", "Username: $username, email: $email password: $password")
+        }
     }
 
 }
