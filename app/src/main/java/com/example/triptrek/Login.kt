@@ -41,6 +41,14 @@ class Login : AppCompatActivity() {
                         {
                             Toast.makeText(this, "User sign up successful", Toast.LENGTH_SHORT).show()
                             d("TT", "User created with email: $email, password: $password and user id: ${it.result.user.uid}")
+                            FirebaseAuth.getInstance().currentUser?.sendEmailVerification()
+                                    ?.addOnCompleteListener {
+                                        if ( it.isSuccessful )
+                                        {
+                                            Toast.makeText(this, "Email sent to $email. Please check and verify.", Toast.LENGTH_SHORT).show()
+                                            d("TT", "Email sent")
+                                        }
+                                    }
                             return@addOnCompleteListener
                         }
                     }
@@ -50,6 +58,7 @@ class Login : AppCompatActivity() {
                         return@addOnFailureListener
                     }
         }
+
     }
 
     private fun signinUser()
