@@ -1,5 +1,6 @@
 package com.example.triptrek
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log.d
@@ -49,6 +50,10 @@ class Login : AppCompatActivity() {
                                             d("TT", "Email sent")
                                         }
                                     }
+                            val userintent = Intent(this, UserProfile::class.java)
+                            startActivity(userintent)
+                            FirebaseAuth.getInstance()
+                                    .signOut()
                             return@addOnCompleteListener
                         }
                     }
@@ -80,6 +85,10 @@ class Login : AppCompatActivity() {
                         {
                             Toast.makeText(this, "User sign in successful", Toast.LENGTH_SHORT).show()
                             d("TT", "User signed in with email: $email, password: $password and user id: ${it.result.user.uid}")
+                            val userintent = Intent(this, UserProfile::class.java)
+                            startActivity(userintent)
+                            FirebaseAuth.getInstance()
+                                    .signOut()
                             return@addOnCompleteListener
                         }
                     }
