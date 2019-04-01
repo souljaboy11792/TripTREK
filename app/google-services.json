@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "809539595861",
+    "firebase_url": "https://triptrek-b0d86.firebaseio.com",
+    "project_id": "triptrek-b0d86",
+    "storage_bucket": "triptrek-b0d86.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809539595861:android:7556eeda81609383",
+        "android_client_info": {
+          "package_name": "com.example.triptrek"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "809539595861-kesism2vuab8lhos1spi0bljsik2c9uk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI44Iza9OxqqNxUK7W1FfYMwWcSGXApfY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
