@@ -41,7 +41,7 @@ class Login : AppCompatActivity() {
                         if ( it.isSuccessful )
                         {
                             Toast.makeText(this, "User sign up successful", Toast.LENGTH_SHORT).show()
-                            d("TT", "User created with email: $email, password: $password and user id: ${it.result.user.uid}")
+                            d("TT", "User created with email: $email, password: $password and user id: ${it.result?.user?.uid}")
                             FirebaseAuth.getInstance().currentUser?.sendEmailVerification()
                                     ?.addOnCompleteListener {
                                         if ( it.isSuccessful )
@@ -84,7 +84,7 @@ class Login : AppCompatActivity() {
                         if ( it.isSuccessful )
                         {
                             Toast.makeText(this, "User sign in successful", Toast.LENGTH_SHORT).show()
-                            d("TT", "User signed in with email: $email, password: $password and user id: ${it.result.user.uid}")
+                            d("TT", "User signed in with email: $email, password: $password and user id: ${it.result?.user?.uid}")
                             val userintent = Intent(this, UserProfile::class.java)
                             startActivity(userintent)
                             FirebaseAuth.getInstance()

@@ -53,6 +53,16 @@
             android:hint="Age" />
 
         <Button
+            android:id="@+id/newTrip"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/rounded_textfield_userprofile"
+            android:layout_marginTop="50dp"
+            android:text="New Trip"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <Button
             android:id="@+id/editProfile"
             android:layout_width="wrap_content"
             android:layout_height="42dp"
@@ -63,7 +73,7 @@
             android:textColor="#FFFFFF"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="150dp"
             android:layout_gravity="right"/>
 
     </LinearLayout>

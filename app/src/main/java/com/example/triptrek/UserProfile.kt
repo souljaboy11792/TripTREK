@@ -11,7 +11,10 @@ class UserProfile : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_profile)
 
-
+        newTrip.setOnClickListener {
+            val intent = Intent(this, AreaSelect::class.java)
+            startActivity(intent)
+        }
 
         editProfile.setOnClickListener {
             val intent = Intent(this, UserProfileEdit::class.java)
