@@ -52,8 +52,6 @@ class Login : AppCompatActivity() {
                                     }
                             val userintent = Intent(this, UserProfile::class.java)
                             startActivity(userintent)
-                            FirebaseAuth.getInstance()
-                                    .signOut()
                             return@addOnCompleteListener
                         }
                     }
@@ -87,8 +85,6 @@ class Login : AppCompatActivity() {
                             d("TT", "User signed in with email: $email, password: $password and user id: ${it.result?.user?.uid}")
                             val userintent = Intent(this, UserProfile::class.java)
                             startActivity(userintent)
-                            FirebaseAuth.getInstance()
-                                    .signOut()
                             return@addOnCompleteListener
                         }
                     }
