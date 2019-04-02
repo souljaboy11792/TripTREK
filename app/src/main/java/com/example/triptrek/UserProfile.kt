@@ -3,6 +3,7 @@ package com.example.triptrek
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_user_profile.*
 
@@ -21,6 +22,8 @@ class UserProfile : AppCompatActivity() {
 
         Username.setText(username)
         Email.setText(useremail)
+
+        Toast.makeText(this, "username = $username, useremail = $useremail", Toast.LENGTH_SHORT).show()
 
         newTrip.setOnClickListener {
             val intent = Intent(this, AreaSelect::class.java)

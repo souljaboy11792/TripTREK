@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log.d
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_login.*
 
 class Login : AppCompatActivity() {
@@ -25,7 +27,7 @@ class Login : AppCompatActivity() {
 
     private fun registerUser()
     {
-        val user = username.text.toString()
+        val username = username.text.toString()
         val email = email.text.toString()
         val password = password.text.toString()
 
@@ -49,6 +51,21 @@ class Login : AppCompatActivity() {
                                             Toast.makeText(this, "Email sent to $email. Please check and verify.", Toast.LENGTH_SHORT).show()
                                             d("TT", "Email sent")
                                         }
+                                    }
+                            //Add user to database
+                            val user = FirebaseAuth.getInstance().currentUser
+                            val profileUpdates = UserProfileChangeRequest.Builder()
+                                    .setDisplayName(username).build()
+                            user?.updateProfile(profileUpdates)
+                            val usertmp = User(username, email)
+                            val uid = FirebaseAuth.getInstance().uid
+                            val ref = FirebaseDatabase.getInstance().getReference("users")
+                            ref.child("$uid").setValue(usertmp)
+                                    .addOnSuccessListener {
+                                        Toast.makeText(this, "User $username added successfully", Toast.LENGTH_SHORT).show()
+                                    }
+                                    .addOnFailureListener {
+                                        Toast.makeText(this, "Failed to add user to database. ${it.message}", Toast.LENGTH_SHORT).show()
                                     }
                             val userintent = Intent(this, UserProfile::class.java)
                             startActivity(userintent)
@@ -97,3 +114,5 @@ class Login : AppCompatActivity() {
     }
 
 }
+
+class User(val username: String, val email: String)
