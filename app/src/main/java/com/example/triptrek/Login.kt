@@ -23,6 +23,18 @@ class Login : AppCompatActivity() {
         SignInButton.setOnClickListener {
             signinUser()
         }
+
+        FacebookSignInButton.setOnClickListener {
+            Toast.makeText(this, "This doesn't work currently. We're working on this", Toast.LENGTH_SHORT).show()
+        }
+
+        GmailSignInButton.setOnClickListener {
+            Toast.makeText(this, "This doesn't work currently. We're working on this", Toast.LENGTH_SHORT).show()
+        }
+
+        TwitterSignInButton.setOnClickListener {
+            Toast.makeText(this, "This doesn't work currently. We're working on this", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun registerUser()
