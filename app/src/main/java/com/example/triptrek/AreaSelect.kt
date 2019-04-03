@@ -1,5 +1,6 @@
 package com.example.triptrek
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 
@@ -9,6 +10,7 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.activity_area_select.*
 
 class AreaSelect : AppCompatActivity(), OnMapReadyCallback {
 
@@ -21,6 +23,11 @@ class AreaSelect : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        next.setOnClickListener {
+            val intent = Intent(this, WhatToDo::class.java)
+            startActivity(intent)
+        }
     }
 
     /**
