@@ -3,12 +3,17 @@ package com.example.triptrek
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.location.Address
 import android.location.Location
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
+import android.util.Log
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import android.location.Geocoder
+import android.widget.Toast
+
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -18,6 +23,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.activity_area_select.*
+import java.io.IOException
 
 class AreaSelect : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
@@ -41,8 +47,12 @@ class AreaSelect : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCl
             val intent = Intent(this, WhatToDo::class.java)
             startActivity(intent)
         }
+
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
+        select.setOnClickListener {
+            Toast.makeText(this, "WOWZA! This doesn't quite work yet tho.", Toast.LENGTH_SHORT).show()
+        }
     }
 
     companion object {
