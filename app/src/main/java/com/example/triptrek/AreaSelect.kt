@@ -6,6 +6,8 @@ import android.content.pm.PackageManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -19,6 +21,8 @@ import kotlinx.android.synthetic.main.activity_area_select.*
 class AreaSelect : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
     private lateinit var mMap: GoogleMap
+
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
 
     override fun onMarkerClick(p0: Marker?) = false
 
@@ -34,6 +38,8 @@ class AreaSelect : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCl
             val intent = Intent(this, WhatToDo::class.java)
             startActivity(intent)
         }
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+
     }
 
     companion object {
@@ -45,6 +51,10 @@ class AreaSelect : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCl
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
         {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQUEST_CODE)
+        }
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION), LOCATION_PERMISSION_REQUEST_CODE)
         }
     }
 
