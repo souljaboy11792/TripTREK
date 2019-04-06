@@ -3,6 +3,7 @@ package com.example.triptrek
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.location.Location
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
@@ -23,6 +24,8 @@ class AreaSelect : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCl
     private lateinit var mMap: GoogleMap
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+
+    private lateinit var lastLocation: Location
 
     override fun onMarkerClick(p0: Marker?) = false
 
@@ -56,6 +59,22 @@ class AreaSelect : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCl
         {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION), LOCATION_PERMISSION_REQUEST_CODE)
         }
+        mMap.isMyLocationEnabled = true
+
+        fusedLocationClient.lastLocation.addOnSuccessListener(this) { location ->
+            if (location != null) {
+                lastLocation = location
+                val currentLatLng = LatLng(location.latitude, location.longitude)
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 15f))
+                placeMarker(currentLatLng)
+            }
+        }
+    }
+
+    private fun placeMarker(location: LatLng)
+    {
+        val markerOptions = MarkerOptions().position(location)
+        mMap.addMarker(markerOptions)
     }
 
     /**
