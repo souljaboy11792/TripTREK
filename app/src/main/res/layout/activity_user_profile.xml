@@ -7,75 +7,103 @@
     android:background="#AEB0B2"
     tools:context=".Login">
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/ProfilePhoto"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="88dp"
+            android:layout_marginEnd="8dp"
             android:background="@drawable/rounded_profilephoto"
             android:gravity="center"
-            android:text="Profile Photo" />
+            android:text="Profile Photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/Username"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="108dp"
             android:background="@drawable/rounded_textfield_userprofile"
             android:gravity="center"
-            android:hint="Username" />
+            android:hint="Username"
+            app:layout_constraintTop_toBottomOf="@+id/ProfilePhoto"
+            tools:layout_editor_absoluteX="0dp" />
 
         <TextView
             android:id="@+id/Email"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/rounded_textfield_userprofile"
             android:gravity="center"
-            android:hint="Email address" />
+            android:hint="Email address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Username" />
 
         <TextView
             android:id="@+id/Age"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/rounded_textfield_userprofile"
             android:gravity="center"
-            android:hint="Age" />
+            android:hint="Age"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Email" />
 
         <Button
             android:id="@+id/newTrip"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="8dp"
             android:background="@drawable/rounded_textfield_userprofile"
-            android:layout_marginTop="50dp"
+            android:gravity="center"
             android:text="New Trip"
-            android:layout_gravity="center"
-            android:gravity="center"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Age" />
 
         <Button
             android:id="@+id/editProfile"
             android:layout_width="wrap_content"
-            android:layout_height="42dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:background="@android:color/holo_red_light"
             android:clickable="true"
-            app:srcCompat="@android:color/holo_red_light"
-            android:text="Edit"
-            android:textColor="#FFFFFF"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
-            android:layout_marginTop="150dp"
-            android:layout_gravity="right"/>
+            android:text="Edit"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:color/holo_red_light" />
 
-    </LinearLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/photoFiller"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ProfilePhoto"
+            app:layout_constraintEnd_toEndOf="@+id/ProfilePhoto"
+            app:layout_constraintStart_toStartOf="@+id/ProfilePhoto"
+            app:layout_constraintTop_toTopOf="@+id/ProfilePhoto" />
+
+    </android.support.constraint.ConstraintLayout>
 
 </ScrollView>

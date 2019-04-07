@@ -10,9 +10,11 @@ import android.provider.MediaStore
 import android.util.Log.d
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_area_select.*
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_user_profile_edit.*
 import java.util.*
 
@@ -40,10 +42,13 @@ class UserProfileEdit : AppCompatActivity() {
 
         editOk.setOnClickListener {
             updateProfilePhoto()
+            updateProfile(username, url)
+            finish()
         }
     }
 
     var uri: Uri? = null
+    var url: String? = ""
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -51,8 +56,11 @@ class UserProfileEdit : AppCompatActivity() {
         {
             uri = data.data
             val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, uri)
-            val bitmapDrawable = BitmapDrawable(bitmap)
-            selectProfilePhoto.setBackgroundDrawable(bitmapDrawable)
+
+            photoFillerEdit.setImageBitmap(bitmap)
+
+            selectProfilePhoto.setText("")
+            selectProfilePhoto.alpha = 0f
         }
     }
 
@@ -61,7 +69,6 @@ class UserProfileEdit : AppCompatActivity() {
         if ( uri == null )
             return
 
-        var url: String? = ""
         val file = UUID.randomUUID().toString()
         val uid = FirebaseAuth.getInstance().uid
         val ref = FirebaseStorage.getInstance().getReference("/userphotos/$uid/$file")
@@ -87,5 +94,20 @@ class UserProfileEdit : AppCompatActivity() {
                 }
 
 
+    }
+
+    private fun updateProfile(username: String?, url: String?)
+    {
+        val user = FirebaseAuth.getInstance().currentUser
+
+        val updates = UserProfileChangeRequest.Builder()
+                .setDisplayName(username)
+                .setPhotoUri(Uri.parse(url))
+                .build()
+
+        user?.updateProfile(updates)
+                ?.addOnSuccessListener {
+                    Toast.makeText(this, "User profile updated successfully", Toast.LENGTH_SHORT).show()
+                }
     }
 }
