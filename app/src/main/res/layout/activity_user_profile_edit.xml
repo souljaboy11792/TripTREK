@@ -48,24 +48,10 @@
             app:layout_constraintTop_toBottomOf="@+id/editUsername"
             tools:layout_editor_absoluteX="0dp" />
 
-        <EditText
-            android:id="@+id/editAge"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/rounded_textfield_userprofile"
-            android:gravity="center"
-            android:hint="Age"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editEmail"
-            app:layout_constraintVertical_bias="0.0"
-            tools:layout_editor_absoluteX="0dp" />
-
         <Button
             android:id="@+id/editOk"
             android:layout_width="wrap_content"
             android:layout_height="42dp"
-            android:layout_marginTop="124dp"
             android:background="@android:color/holo_red_light"
             android:clickable="true"
             android:focusable="true"
@@ -75,7 +61,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.95"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editAge" />
+            tools:layout_editor_absoluteY="631dp" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/photoFillerEdit"

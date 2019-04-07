@@ -51,25 +51,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Username" />
 
-        <TextView
-            android:id="@+id/Age"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/rounded_textfield_userprofile"
-            android:gravity="center"
-            android:hint="Age"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Email" />
-
         <Button
             android:id="@+id/newTrip"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="80dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/rounded_textfield_userprofile"
             android:gravity="center"
@@ -77,13 +64,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Age" />
+            app:layout_constraintTop_toBottomOf="@+id/Email" />
 
         <Button
             android:id="@+id/editProfile"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="88dp"
             android:layout_marginEnd="16dp"
             android:background="@android:color/holo_red_light"
             android:clickable="true"
@@ -103,6 +90,22 @@
             app:layout_constraintEnd_toEndOf="@+id/ProfilePhoto"
             app:layout_constraintStart_toStartOf="@+id/ProfilePhoto"
             app:layout_constraintTop_toTopOf="@+id/ProfilePhoto" />
+
+        <Button
+            android:id="@+id/signOut"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/holo_red_light"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="Sign Out"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:color/holo_red_light" />
 
     </android.support.constraint.ConstraintLayout>
 

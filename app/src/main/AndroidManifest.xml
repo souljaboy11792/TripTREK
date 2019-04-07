@@ -29,23 +29,26 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
         <activity
-            android:name=".AreaSelect"
-            android:label="@string/title_activity_area_select" />
-        <activity android:name=".UserProfileEdit" />
-        <activity android:name=".UserProfile" />
-        <activity
-            android:name=".Login"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".UserProfile"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".AreaSelect"
+            android:label="@string/title_activity_area_select" />
+        <activity android:name=".UserProfileEdit" />
+        <activity
+            android:name=".Login"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

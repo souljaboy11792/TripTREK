@@ -36,6 +36,12 @@ class UserProfile : AppCompatActivity() {
         var photourl: String? = null
 
         val uid = FirebaseAuth.getInstance().uid
+        if ( uid == null )
+        {
+            val intent = Intent(this, Login::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+        }
         val ref = FirebaseDatabase.getInstance().getReference("users/$uid")
         ref.addListenerForSingleValueEvent(object: ValueEventListener {
             override fun onDataChange(p0: DataSnapshot) {
@@ -61,6 +67,13 @@ class UserProfile : AppCompatActivity() {
 
         editProfile.setOnClickListener {
             val intent = Intent(this, UserProfileEdit::class.java)
+            startActivity(intent)
+        }
+
+        signOut.setOnClickListener {
+            val user = FirebaseAuth.getInstance().signOut()
+            val intent = Intent(this, Login::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
         }
     }
