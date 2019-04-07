@@ -69,7 +69,8 @@ class Login : AppCompatActivity() {
                             val profileUpdates = UserProfileChangeRequest.Builder()
                                     .setDisplayName(username).build()
                             user?.updateProfile(profileUpdates)
-                            val usertmp = User(username, email)
+                            val phototmp = ""
+                            val usertmp = User(username, email, phototmp)
                             val uid = FirebaseAuth.getInstance().uid
                             val ref = FirebaseDatabase.getInstance().getReference("users")
                             ref.child("$uid").setValue(usertmp)
@@ -127,4 +128,4 @@ class Login : AppCompatActivity() {
 
 }
 
-class User(val username: String, val email: String)
+class User(val username: String, val email: String, val photo: String)
