@@ -129,3 +129,10 @@ class Login : AppCompatActivity() {
 }
 
 class User(val username: String, val email: String, val photo: String)
+{
+    constructor() : this("", "", "")
+    public fun getphotourl(): String
+    {
+        return photo
+    }
+}
