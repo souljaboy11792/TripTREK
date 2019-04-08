@@ -43,7 +43,7 @@ class UserProfile : AppCompatActivity() {
             startActivity(intent)
         }
         val ref = FirebaseDatabase.getInstance().getReference("users/$uid")
-        ref.addListenerForSingleValueEvent(object: ValueEventListener {
+        ref.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(p0: DataSnapshot) {
                 val user = p0.getValue(User::class.java)
                 photourl = user?.getphotourl().toString()
