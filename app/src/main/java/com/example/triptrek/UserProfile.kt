@@ -47,10 +47,13 @@ class UserProfile : AppCompatActivity() {
             override fun onDataChange(p0: DataSnapshot) {
                 val user = p0.getValue(User::class.java)
                 photourl = user?.getphotourl().toString()
-                d("TT", "within Listener, photourl = $photourl")
-                ProfilePhoto.setText("")
-                ProfilePhoto.alpha = 0f
-                Picasso.get().load(photourl).into(photoFiller)
+                if ( photourl != "" )
+                {
+                    d("TT", "within Listener, photourl = $photourl")
+                    ProfilePhoto.setText("")
+                    ProfilePhoto.alpha = 0f
+                    Picasso.get().load(photourl).into(photoFiller)
+                }
             }
 
             override fun onCancelled(p0: DatabaseError) {
