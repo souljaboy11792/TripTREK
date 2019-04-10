@@ -1,7 +1,7 @@
 package com.example.triptrek
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 
@@ -12,8 +12,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         Handler().postDelayed({
-            val login = Intent(this, Login::class.java)
+            val login = Intent(this, UserProfile::class.java)
             startActivity(login)
+            finish()
         }, 3000)
     }
 }

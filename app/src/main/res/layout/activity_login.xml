@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -19,10 +19,22 @@
             app:srcCompat="@drawable/triptreklogo" />
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="30dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:ems="10"
+            android:hint="Username"
+            android:gravity="center"
+            android:background="@drawable/rounded_textfield"/>
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:ems="10"
@@ -50,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="Sign In"
-            android:background="#B7FF0000"
+            android:background="@drawable/rounded_regular_signin"
             android:textColor="#FFFF"
             android:clickable="true"
             android:foreground="?attr/selectableItemBackground" />
@@ -61,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Sign Up"
-            android:background="#D7077F9E"
+            android:background="@drawable/rounded_regular_signup"
             android:textColor="#FFFF"
             android:clickable="true"
             android:foreground="?attr/selectableItemBackground"/>
@@ -72,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Log In With Facebook"
-            android:background="#8A0055FF"
+            android:background="@drawable/rounded_fb_signin"
             android:textColor="#FFFF"
             android:clickable="true"
             android:foreground="?attr/selectableItemBackground"/>
@@ -83,7 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Log In With Twitter"
-            android:background="#B500F9FF"
+            android:background="@drawable/rounded_twitter_signin"
             android:textColor="#FFFF"
             android:clickable="true"
             android:foreground="?attr/selectableItemBackground"/>
@@ -94,10 +106,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Log In With Google"
-            android:background="#B0FF0000"
+            android:background="@drawable/rounded_gmail_signin"
             android:textColor="#FFFF"
             android:clickable="true"
             android:foreground="?attr/selectableItemBackground"/>
     </LinearLayout>
 
-</RelativeLayout>
+</ScrollView>

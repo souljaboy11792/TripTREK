@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#AEB0B2"
+    tools:context=".Login">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/selectProfilePhoto"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="88dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_profilephoto"
+            android:gravity="center"
+            android:text="Profile Photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editUsername"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="108dp"
+            android:background="@drawable/rounded_textfield_userprofile"
+            android:gravity="center"
+            android:hint="Username"
+            app:layout_constraintTop_toBottomOf="@+id/selectProfilePhoto"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <EditText
+            android:id="@+id/editEmail"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_textfield_userprofile"
+            android:gravity="center"
+            android:hint="Email address"
+            app:layout_constraintTop_toBottomOf="@+id/editUsername"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <Button
+            android:id="@+id/editOk"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:background="@android:color/holo_red_light"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="Ok"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="631dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/photoFillerEdit"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:layout_constraintBottom_toBottomOf="@+id/selectProfilePhoto"
+            app:layout_constraintEnd_toEndOf="@+id/selectProfilePhoto"
+            app:layout_constraintStart_toStartOf="@+id/selectProfilePhoto"
+            app:layout_constraintTop_toTopOf="@+id/selectProfilePhoto" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
