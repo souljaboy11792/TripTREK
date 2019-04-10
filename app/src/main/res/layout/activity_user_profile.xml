@@ -7,7 +7,7 @@
     android:background="#AEB0B2"
     tools:context=".Login">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -107,6 +107,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:color/holo_red_light" />
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
