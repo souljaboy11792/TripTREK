@@ -54,6 +54,7 @@ class AreaSelect : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerCl
             val intent = Intent(this, RegionSelect::class.java)
             startActivity(intent)
         }
+
     }
 
     companion object {

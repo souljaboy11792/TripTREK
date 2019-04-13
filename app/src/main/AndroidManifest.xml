@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/launcher_icon_rounded"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegionSelect"></activity>
+        <activity android:name=".List"></activity>
+        <activity android:name=".RegionSelect" />
         <activity android:name=".WhatToDo" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -34,7 +35,7 @@
 
         <activity
             android:name=".UserProfile"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AreaSelect"
             android:label="@string/title_activity_area_select" />

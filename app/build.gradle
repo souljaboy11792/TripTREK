@@ -3,6 +3,9 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 
 android {
+    androidExtensions {
+        experimental = true
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.triptrek"
